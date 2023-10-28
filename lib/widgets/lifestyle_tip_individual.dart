@@ -13,8 +13,8 @@ class LifeStyleTipIndividual extends StatelessWidget {
     var height = MediaQuery.sizeOf(context).height;
     var devicePixelRatio = getAdjustedPixelRatio(context);
     return CustomDarkerContainer(
-        height / 8,
-        width / 2.4,
+        height / 9,
+        width / 2.35,
         Padding(
           padding: EdgeInsets.symmetric(
               horizontal: width / 30, vertical: height / 48),
@@ -35,7 +35,7 @@ class LifeStyleTipIndividual extends StatelessWidget {
                   tip,
                   softWrap: true,
                   style: TextStyle(
-                      color: Colors.white, fontSize: devicePixelRatio * 4),
+                      color: Colors.white, fontSize: devicePixelRatio * 4.5),
                 ),
               )
             ],

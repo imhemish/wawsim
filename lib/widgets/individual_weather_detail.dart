@@ -15,7 +15,7 @@ class IndividualWeatherDetail extends StatelessWidget {
     var devicePixelRatio = getAdjustedPixelRatio(context);
     return CustomDarkerContainer(
         null,
-        width / 2.4,
+        width / 2.35,
         Padding(
           padding: EdgeInsets.symmetric(
               horizontal: width / 30, vertical: height / 30),
