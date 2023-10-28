@@ -44,6 +44,9 @@ class CustomContainerTemperature extends StatelessWidget {
               style: TextStyle(
                   color: Colors.white, fontSize: devicePixelRatio * 4.7),
             ),
+            SizedBox(
+              height: height / 50,
+            )
           ],
         ),
       ),
