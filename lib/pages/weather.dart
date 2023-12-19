@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:uitask/widgets/lifestyle_tip_individual.dart';
-import './widgets/individual_weather_detail.dart';
-import './widgets/daily_temperature.dart';
-import './widgets/darker_container.dart';
-import './widgets/container_temperature.dart';
-import './widgets/air_quality.dart';
-import './widgets/sun_details.dart';
-import './util.dart';
+import '../widgets/individual_weather_detail.dart';
+import '../widgets/daily_temperature.dart';
+import '../widgets/darker_container.dart';
+import '../widgets/container_temperature.dart';
+import '../widgets/air_quality.dart';
+import '../widgets/sun_details.dart';
+import '../util.dart';
 
-class MyHomePage extends StatelessWidget {
+class WeatherPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var height = MediaQuery.of(context).size.height;
