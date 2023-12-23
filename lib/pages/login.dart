@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import '../controllers/login_controller.dart';
 
 class LoginPage extends StatefulWidget {
   @override
@@ -8,6 +10,7 @@ class LoginPage extends StatefulWidget {
 class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
+    var loginController = Get.put(LoginController());
     Size size = MediaQuery.of(context).size;
     return Scaffold(
       appBar: null,
@@ -23,6 +26,7 @@ class _LoginPageState extends State<LoginPage> {
               ConstrainedBox(
                 constraints: BoxConstraints.loose(Size(600, 70)),
                 child: TextField(
+                  controller: loginController.usernameController,
                   
                   decoration: InputDecoration(
                     border: OutlineInputBorder(),
@@ -47,9 +51,10 @@ class _LoginPageState extends State<LoginPage> {
                   height: size.height/20,
                 ),
                 ElevatedButton(
-                  onPressed: () => {Navigator.pushReplacementNamed(context, "/weather")},
-                  child: const Text("Login", style: TextStyle(color: Colors.white),),
+                  onPressed: () => {
+                    loginController.login(), Navigator.pushReplacementNamed(context, "/weather")},
                   style: ElevatedButton.styleFrom(backgroundColor: Colors.blue),
+                  child: const Text("Login", style: TextStyle(color: Colors.white),),
                 )
             ],
           ),

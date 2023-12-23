@@ -1,21 +1,37 @@
 import "package:flutter/material.dart";
 import 'package:get/get.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 import '../controllers/onboard_controller.dart';
 
 class OnboardingPage extends StatefulWidget {
+
   @override
   State<OnboardingPage> createState() => _OnboardingPageState();
 }
 
-class _OnboardingPageState extends State<OnboardingPage> {
+class _OnboardingPageState extends State<OnboardingPage> with TickerProviderStateMixin {
+
   var controller = Get.put(OnboardController());
+  late AnimationController animationController;
+
+  @override
+  void dispose() {
+    animationController.dispose();
+    super.dispose();
+  }
+
   @override
   void initState() {
     super.initState();
     controller.checkLoggedIn();
+    animationController = AnimationController(
+      vsync: this,
+      duration: Duration(milliseconds: 500),
+    )
+      ..forward()
+      ..repeat(reverse: true);
     
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,6 +45,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 
                 children: [
+
                   Text(
                     'Welcome to Weather App',
                     style: TextStyle(
@@ -37,17 +54,34 @@ class _OnboardingPageState extends State<OnboardingPage> {
                     ),
                     textAlign: TextAlign.center,
                   ),
+
                   SizedBox(height: 16),
+
                   Text(
                     'Weather details at your fingertips',
                     style: TextStyle(fontSize: 16),
                     textAlign: TextAlign.center,
                   ),
+
                   SizedBox(height: 20),
-                  Image.asset(
-                    'assets/icon.png', // Replace with your weather icon asset
-                    height: 150,
-                    width: 150,
+
+                  AnimatedBuilder(animation: animationController, builder: (context, child) {
+                    return SizedBox(
+                      height: 200,
+                      child: Container(
+                        child: Padding(
+                          padding: EdgeInsets.all(35 * animationController.value),
+                          child: child,
+                        ),
+                      ),
+                    );
+                    },
+
+                    child: Image.asset(
+                          'assets/icon.png', // Replace with your weather icon asset
+                          height: 150,
+                          width: 150,
+                        )
                   ),
                   
                   ElevatedButton(
@@ -56,7 +90,6 @@ class _OnboardingPageState extends State<OnboardingPage> {
                         },
                         child: Text('Get Started'),
                       ),
-                  
                   
                 ],
               ),
