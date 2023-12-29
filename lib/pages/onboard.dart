@@ -10,7 +10,7 @@ class OnboardingPage extends StatefulWidget {
 
 class _OnboardingPageState extends State<OnboardingPage> with TickerProviderStateMixin {
 
-  var controller = Get.put(OnboardController());
+  var controller = Get.find<OnboardController>();
   late AnimationController animationController;
 
   @override
@@ -68,12 +68,10 @@ class _OnboardingPageState extends State<OnboardingPage> with TickerProviderStat
                   AnimatedBuilder(animation: animationController, builder: (context, child) {
                     return SizedBox(
                       height: 200,
-                      child: Container(
-                        child: Padding(
+                      child: Padding(
                           padding: EdgeInsets.all(35 * animationController.value),
                           child: child,
                         ),
-                      ),
                     );
                     },
 
@@ -86,7 +84,7 @@ class _OnboardingPageState extends State<OnboardingPage> with TickerProviderStat
                   
                   ElevatedButton(
                         onPressed: () {
-                          Navigator.pushReplacementNamed(context, "/login");
+                          Get.offNamed("/login");
                         },
                         child: Text('Get Started'),
                       ),

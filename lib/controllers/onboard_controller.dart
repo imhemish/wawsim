@@ -9,3 +9,10 @@ class OnboardController extends GetxController {
     }
   }
 }
+
+class OnboardBinding implements Bindings {
+  @override
+  void dependencies() {
+    Get.put(OnboardController());
+  }
+}

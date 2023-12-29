@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:uitask/widgets/lifestyle_tip_individual.dart';
 import '../widgets/individual_weather_detail.dart';
 import '../widgets/daily_temperature.dart';
@@ -7,8 +8,10 @@ import '../widgets/container_temperature.dart';
 import '../widgets/air_quality.dart';
 import '../widgets/sun_details.dart';
 import '../util.dart';
+import '../controllers/weather_controller.dart';
 
 class WeatherPage extends StatelessWidget {
+  final controller = Get.find<WeatherController>();
   @override
   Widget build(BuildContext context) {
     var height = MediaQuery.of(context).size.height;
@@ -31,15 +34,17 @@ class WeatherPage extends StatelessWidget {
               flexibleSpace: FlexibleSpaceBar(
                 titlePadding: EdgeInsets.symmetric(
                     horizontal: width / 18, vertical: height / 60),
-                title: Text(
-                  "Mullana",
-                  textAlign: TextAlign.start,
-                  style: TextStyle(color: Colors.white),
+                title: Obx(
+                  () => Text(
+                    controller.currentWeatherInformation.value.location,
+                    textAlign: TextAlign.start,
+                    style: TextStyle(color: Colors.white),
+                  ),
                 ),
               ),
               actions: [
                 IconButton(
-                    onPressed: () {},
+                    onPressed: controller.logOut,
                     icon: const Icon(
                       Icons.read_more,
                       color: Colors.white,
@@ -79,6 +84,50 @@ class WeatherPage extends StatelessWidget {
                           color: Colors.white,
                           fontSize: devicePixelRatio * 5.5),
                     ),
+                    SizedBox(
+                      height: height / 60,
+                    ),
+                   
+                    Obx(
+                      () => Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Column(children: [
+                              IndividualWeatherDetail(
+                                  Icons.thermostat, "Feels like", "${controller.currentWeatherInformation.value.feelsLike}°"),
+                              SizedBox(
+                                height: height / 60,
+                              ),
+                              IndividualWeatherDetail(
+                                  Icons.water_drop, "Humidity", "${controller.currentWeatherInformation.value.humidity}%"),
+                              SizedBox(
+                                height: height / 60,
+                              ),
+                              IndividualWeatherDetail(
+                                  Icons.remove_red_eye_rounded,
+                                  "Visibility",
+                                  "${controller.currentWeatherInformation.value.visibility}mi")
+                            ]),
+                            Column(children: [
+                              IndividualWeatherDetail(
+                                  Icons.air, "WNW Wind", "${controller.currentWeatherInformation.value.windSpeed} Km/h"),
+                              SizedBox(
+                                height: height / 60,
+                              ),
+                              IndividualWeatherDetail(
+                                  Icons.sunny, "UV", controller.currentWeatherInformation.value.uvIndex),
+                              SizedBox(
+                                height: height / 60,
+                              ),
+                              IndividualWeatherDetail(Icons.arrow_downward,
+                                  "Air Pressure", "${controller.currentWeatherInformation.value.airPressure} hPa")
+                            ]),
+                          ]),
+                    ),
+                    SizedBox(
+                      height: height / 45,
+                    ),
+                    Obx(() => SunDetails(controller.currentWeatherInformation.value.sunSet, controller.currentWeatherInformation.value.sunRise)),
                     SizedBox(
                       height: height / 20,
                     ),
@@ -188,59 +237,9 @@ class WeatherPage extends StatelessWidget {
                     SizedBox(
                       height: height / 45,
                     ),
-                    Padding(
-                      padding: EdgeInsets.symmetric(horizontal: width / 30),
-                      child: Text(
-                        "Weather Details",
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontSize: devicePixelRatio * 5),
-                      ),
-                    ),
-                    SizedBox(
-                      height: height / 60,
-                    ),
-                    Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Column(children: [
-                            IndividualWeatherDetail(
-                                Icons.thermostat, "Feels like", "25°"),
-                            SizedBox(
-                              height: height / 60,
-                            ),
-                            IndividualWeatherDetail(
-                                Icons.water_drop, "Humidity", "57%"),
-                            SizedBox(
-                              height: height / 60,
-                            ),
-                            IndividualWeatherDetail(
-                                Icons.remove_red_eye_rounded,
-                                "Visibility",
-                                "10mi")
-                          ]),
-                          Column(children: [
-                            IndividualWeatherDetail(
-                                Icons.air, "WNW Wind", "8 Km/h"),
-                            SizedBox(
-                              height: height / 60,
-                            ),
-                            IndividualWeatherDetail(
-                                Icons.sunny, "UV", "0 Very Weak"),
-                            SizedBox(
-                              height: height / 60,
-                            ),
-                            IndividualWeatherDetail(Icons.arrow_downward,
-                                "Air Pressure", "1009 hPa")
-                          ]),
-                        ]),
-                    SizedBox(
-                      height: height / 45,
-                    ),
-                    SunDetails("5:55 PM", "6:20 AM"),
-                    SizedBox(
-                      height: height / 45,
-                    ),
+                    
+                    
+                    
                     Padding(
                       padding: EdgeInsets.symmetric(horizontal: width / 30),
                       child: Text(
@@ -253,6 +252,7 @@ class WeatherPage extends StatelessWidget {
                     SizedBox(
                       height: height / 60,
                     ),
+                    
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
