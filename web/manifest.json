@@ -1,11 +1,11 @@
 {
-    "name": "uitask",
-    "short_name": "uitask",
+    "name": "Mawsim",
+    "short_name": "Mawsim",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
     "theme_color": "#0175C2",
-    "description": "A new Flutter project.",
+    "description": "A weather app",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [

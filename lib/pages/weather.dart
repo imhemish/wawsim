@@ -10,8 +10,15 @@ import '../widgets/sun_details.dart';
 import '../util.dart';
 import '../controllers/weather_controller.dart';
 
-class WeatherPage extends StatelessWidget {
+class WeatherPage extends StatefulWidget {
+  @override
+  State<WeatherPage> createState() => _WeatherPageState();
+}
+
+class _WeatherPageState extends State<WeatherPage> {
   final controller = Get.find<WeatherController>();
+  bool _stretched = true;
+
   @override
   Widget build(BuildContext context) {
     var height = MediaQuery.of(context).size.height;
@@ -28,7 +35,10 @@ class WeatherPage extends StatelessWidget {
           backgroundColor: Colors.transparent,
           body: CustomScrollView(slivers: [
             SliverAppBar(
-              backgroundColor: Colors.transparent,
+              stretch: _stretch,
+              stretchTriggerOffset: 1,
+              onStretchTrigger: () async => {setState(() {_stretched = true;})},
+              backgroundColor: _stretched ? Colors.transparent : Colors.black, 
               pinned: true,
               expandedHeight: height / 3,
               flexibleSpace: FlexibleSpaceBar(

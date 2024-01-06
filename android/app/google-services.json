@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "568851041587",
+    "project_id": "mausam-d02bd",
+    "storage_bucket": "mausam-d02bd.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:568851041587:android:4132187c2cfba959030246",
+        "android_client_info": {
+          "package_name": "com.example.uitask"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBNZKuuV35TqV7Z-pMtzuOc4nwoFKbINy8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

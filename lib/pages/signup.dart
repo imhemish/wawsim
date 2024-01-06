@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '../controllers/login_controller.dart';
+import '../controllers/signup_controller.dart';
 
-class LoginPage extends StatefulWidget {
+class SignUpPage extends StatefulWidget {
   @override
-  State<LoginPage> createState() => _LoginPageState();
+  State<SignUpPage> createState() => _SignUpPageState();
 }
 
-class _LoginPageState extends State<LoginPage> {
+class _SignUpPageState extends State<SignUpPage> {
   final _usernameController = TextEditingController();
   final _passwordController = TextEditingController();
   @override
   Widget build(BuildContext context) {
-    var loginController = Get.put(LoginController());
+    var signupController = Get.put(SignUpController());
     Size size = MediaQuery.of(context).size;
     return Scaffold(
       appBar: null,
@@ -23,7 +23,7 @@ class _LoginPageState extends State<LoginPage> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text("Let's Login", style: TextStyle(fontSize: 20), textAlign: TextAlign.center),
+              Text("Let's Sign Up", style: TextStyle(fontSize: 20), textAlign: TextAlign.center),
               SizedBox(height: size.height/20),
               ConstrainedBox(
                 constraints: BoxConstraints.loose(Size(600, 70)),
@@ -54,15 +54,14 @@ class _LoginPageState extends State<LoginPage> {
                   height: size.height/20,
                 ),
                 ElevatedButton(
-                  onPressed: () => {
-                    loginController.loginWithEmailPassword(_usernameController.text, _passwordController.text)},
+                  onPressed: () => {signupController.signup(_usernameController.text, _passwordController.text)},
                   style: ElevatedButton.styleFrom(backgroundColor: Colors.blue),
-                  child: const Text("Login", style: TextStyle(color: Colors.white),),
+                  child: const Text("SignUp", style: TextStyle(color: Colors.white),),
                 ),
                 SizedBox(
                   height: size.height/20,
                 ),
-                TextButton(onPressed: () {Get.offNamed("/signup");}, child: Text("Don't have an account?"))
+                TextButton(onPressed: () {Get.offNamed("/login");}, child: Text("Already have an account?"))
             ],
           ),
         ),
