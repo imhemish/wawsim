@@ -2,7 +2,7 @@ import 'dart:convert';
 
 import 'package:get/get.dart';
 import 'package:http/http.dart' as http;
-import 'package:shared_preferences/shared_preferences.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class WeatherInformation {
   final String location;
@@ -76,7 +76,7 @@ class WeatherController extends GetxController {
   }
 
   Future<void> logOut() async {
-    (await SharedPreferences.getInstance()).clear();
+    await FirebaseAuth.instance.signOut();
     Get.offNamed("/");
   }
 }

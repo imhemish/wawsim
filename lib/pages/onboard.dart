@@ -47,7 +47,7 @@ class _OnboardingPageState extends State<OnboardingPage> with TickerProviderStat
                 children: [
 
                   Text(
-                    'Welcome to Weather App',
+                    'Welcome to Wawsim',
                     style: TextStyle(
                       fontSize: 24,
                       fontWeight: FontWeight.bold,

@@ -90,12 +90,12 @@ BEGIN
         BLOCK "040904e4"
         BEGIN
             VALUE "CompanyName", "com.example" "\0"
-            VALUE "FileDescription", "uitask" "\0"
+            VALUE "FileDescription", "Wawsim" "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
-            VALUE "InternalName", "uitask" "\0"
+            VALUE "InternalName", "Wawsim" "\0"
             VALUE "LegalCopyright", "Copyright (C) 2023 com.example. All rights reserved." "\0"
-            VALUE "OriginalFilename", "uitask.exe" "\0"
-            VALUE "ProductName", "uitask" "\0"
+            VALUE "OriginalFilename", "Wawsim.exe" "\0"
+            VALUE "ProductName", "Wawsim" "\0"
             VALUE "ProductVersion", VERSION_AS_STRING "\0"
         END
     END

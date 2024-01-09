@@ -1,21 +1,21 @@
 {
   "project_info": {
-    "project_number": "568851041587",
-    "project_id": "mausam-d02bd",
-    "storage_bucket": "mausam-d02bd.appspot.com"
+    "project_number": "233622925244",
+    "project_id": "wawsim-f9f4a",
+    "storage_bucket": "wawsim-f9f4a.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:568851041587:android:4132187c2cfba959030246",
+        "mobilesdk_app_id": "1:233622925244:android:53cde6a14fa0ba0fe645b9",
         "android_client_info": {
-          "package_name": "com.example.uitask"
+          "package_name": "net.hemish.wawsim"
         }
       },
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyBNZKuuV35TqV7Z-pMtzuOc4nwoFKbINy8"
+          "current_key": "AIzaSyCP1A2s2IhEMSRNzOz4JanpdldaNIg5-Sk"
         }
       ],
       "services": {

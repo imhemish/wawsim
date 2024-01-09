@@ -5,19 +5,19 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "weather-ui-gdsc-task",
+            "name": "wawsim",
             "request": "launch",
             "type": "dart",
             "noDebug": true
         },
         {
-            "name": "weather-ui-gdsc-task (profile mode)",
+            "name": "wawsim (profile mode)",
             "request": "launch",
             "type": "dart",
             "flutterMode": "profile"
         },
         {
-            "name": "weather-ui-gdsc-task (release mode)",
+            "name": "wawsim (release mode)",
             "request": "launch",
             "type": "dart",
             "flutterMode": "release"

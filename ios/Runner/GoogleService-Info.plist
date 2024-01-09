@@ -3,17 +3,17 @@
 <plist version="1.0">
 <dict>
 	<key>API_KEY</key>
-	<string>AIzaSyDACGNfmb12JpjXiv_yVtrFa_S2CwzcNa4</string>
+	<string>AIzaSyDkQc8NWTF0JV9U2uzZ85G0FJ2kgpjYsNc</string>
 	<key>GCM_SENDER_ID</key>
-	<string>568851041587</string>
+	<string>233622925244</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.example.uitask</string>
+	<string>net.hemish.wawsim</string>
 	<key>PROJECT_ID</key>
-	<string>mausam-d02bd</string>
+	<string>wawsim-f9f4a</string>
 	<key>STORAGE_BUCKET</key>
-	<string>mausam-d02bd.appspot.com</string>
+	<string>wawsim-f9f4a.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -25,6 +25,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:568851041587:ios:d7e19392be2ecf4c030246</string>
+	<string>1:233622925244:ios:467b59ca44b21876e645b9</string>
 </dict>
 </plist>

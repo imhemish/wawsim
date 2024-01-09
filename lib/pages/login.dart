@@ -23,6 +23,7 @@ class _LoginPageState extends State<LoginPage> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
+              SizedBox(height: size.height/5),
               Text("Let's Login", style: TextStyle(fontSize: 20), textAlign: TextAlign.center),
               SizedBox(height: size.height/20),
               ConstrainedBox(
@@ -62,7 +63,27 @@ class _LoginPageState extends State<LoginPage> {
                 SizedBox(
                   height: size.height/20,
                 ),
-                TextButton(onPressed: () {Get.offNamed("/signup");}, child: Text("Don't have an account?"))
+                SizedBox(
+                  height: size.height/40,
+                ),
+                Text("or Sign In with"),
+                SizedBox(
+                  height: size.height/40,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  
+                  children: [
+                  ElevatedButton(child: Image.asset("assets/google.png", width: 35,), onPressed: () => loginController.loginWithGoogle(), ),
+                  SizedBox(width: 10,),
+                  ElevatedButton(child: Image.asset("assets/github.png", width: 35,), onPressed: () => loginController.loginWithGithub(),)
+                  ]
+                ),
+                
+                Expanded(child: Align(alignment: Alignment.bottomCenter, child: TextButton(onPressed: () {Get.offNamed("/signup");}, child: Text("Don't have an account?",)))),
+                SizedBox(
+                  height: size.height/30,
+                ),
             ],
           ),
         ),

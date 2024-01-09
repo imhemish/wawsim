@@ -1,10 +1,10 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:uitask/controllers/onboard_controller.dart';
-import 'package:uitask/controllers/weather_controller.dart';
-import 'package:uitask/pages/login.dart';
-import 'package:uitask/pages/onboard.dart';
-import 'package:uitask/pages/signup.dart';
+import 'package:Wawsim/controllers/onboard_controller.dart';
+import 'package:Wawsim/controllers/weather_controller.dart';
+import 'package:Wawsim/pages/login.dart';
+import 'package:Wawsim/pages/onboard.dart';
+import 'package:Wawsim/pages/signup.dart';
 import 'pages/weather.dart';
 import 'package:get/get.dart';
 import 'firebase_options.dart';
@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
 
     return GetMaterialApp(
-      title: 'Mawsim',
+      title: 'Wawsim',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),

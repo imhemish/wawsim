@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:uitask/util.dart';
-import 'package:uitask/widgets/darker_container.dart';
+import 'package:Wawsim/util.dart';
+import 'package:Wawsim/widgets/darker_container.dart';
 
 class AirQuality extends StatelessWidget {
   @override

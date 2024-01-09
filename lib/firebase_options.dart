@@ -44,38 +44,38 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyDE5lmcVwH6igNYDFK0I6TRzQK_geqOPvU',
-    appId: '1:568851041587:web:d07210e74e5c0d62030246',
-    messagingSenderId: '568851041587',
-    projectId: 'mausam-d02bd',
-    authDomain: 'mausam-d02bd.firebaseapp.com',
-    storageBucket: 'mausam-d02bd.appspot.com',
-    measurementId: 'G-05EBTN26ZV',
+    apiKey: 'AIzaSyBqsE2F9fhk_Dct5B34MzMkYi3BMbwpN8I',
+    appId: '1:233622925244:web:c5d9bef6fb2a85bee645b9',
+    messagingSenderId: '233622925244',
+    projectId: 'wawsim-f9f4a',
+    authDomain: 'wawsim-f9f4a.firebaseapp.com',
+    storageBucket: 'wawsim-f9f4a.appspot.com',
+    measurementId: 'G-PFBRKGX2Z4',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyBNZKuuV35TqV7Z-pMtzuOc4nwoFKbINy8',
-    appId: '1:568851041587:android:4132187c2cfba959030246',
-    messagingSenderId: '568851041587',
-    projectId: 'mausam-d02bd',
-    storageBucket: 'mausam-d02bd.appspot.com',
+    apiKey: 'AIzaSyCP1A2s2IhEMSRNzOz4JanpdldaNIg5-Sk',
+    appId: '1:233622925244:android:53cde6a14fa0ba0fe645b9',
+    messagingSenderId: '233622925244',
+    projectId: 'wawsim-f9f4a',
+    storageBucket: 'wawsim-f9f4a.appspot.com',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyDACGNfmb12JpjXiv_yVtrFa_S2CwzcNa4',
-    appId: '1:568851041587:ios:d7e19392be2ecf4c030246',
-    messagingSenderId: '568851041587',
-    projectId: 'mausam-d02bd',
-    storageBucket: 'mausam-d02bd.appspot.com',
-    iosBundleId: 'com.example.uitask',
+    apiKey: 'AIzaSyDkQc8NWTF0JV9U2uzZ85G0FJ2kgpjYsNc',
+    appId: '1:233622925244:ios:467b59ca44b21876e645b9',
+    messagingSenderId: '233622925244',
+    projectId: 'wawsim-f9f4a',
+    storageBucket: 'wawsim-f9f4a.appspot.com',
+    iosBundleId: 'net.hemish.wawsim',
   );
 
   static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: 'AIzaSyDACGNfmb12JpjXiv_yVtrFa_S2CwzcNa4',
-    appId: '1:568851041587:ios:987d55660abf0104030246',
-    messagingSenderId: '568851041587',
-    projectId: 'mausam-d02bd',
-    storageBucket: 'mausam-d02bd.appspot.com',
-    iosBundleId: 'com.example.uitask.RunnerTests',
+    apiKey: 'AIzaSyDkQc8NWTF0JV9U2uzZ85G0FJ2kgpjYsNc',
+    appId: '1:233622925244:ios:6c5fde659f88f0d6e645b9',
+    messagingSenderId: '233622925244',
+    projectId: 'wawsim-f9f4a',
+    storageBucket: 'wawsim-f9f4a.appspot.com',
+    iosBundleId: 'net.hemish.wawsim.RunnerTests',
   );
 }

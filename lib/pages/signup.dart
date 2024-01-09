@@ -23,6 +23,7 @@ class _SignUpPageState extends State<SignUpPage> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
+              SizedBox(height: size.height/5),
               Text("Let's Sign Up", style: TextStyle(fontSize: 20), textAlign: TextAlign.center),
               SizedBox(height: size.height/20),
               ConstrainedBox(
@@ -61,7 +62,10 @@ class _SignUpPageState extends State<SignUpPage> {
                 SizedBox(
                   height: size.height/20,
                 ),
-                TextButton(onPressed: () {Get.offNamed("/login");}, child: Text("Already have an account?"))
+                Expanded(child: Align(alignment: Alignment.bottomCenter, child: TextButton(onPressed: () {Get.offNamed("/login");}, child: Text("Already have an account?",)))),
+                SizedBox(
+                  height: size.height/30,
+                ),
             ],
           ),
         ),

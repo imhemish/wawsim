@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:uitask/widgets/lifestyle_tip_individual.dart';
+import 'package:Wawsim/widgets/lifestyle_tip_individual.dart';
 import '../widgets/individual_weather_detail.dart';
 import '../widgets/daily_temperature.dart';
 import '../widgets/darker_container.dart';
@@ -35,8 +35,8 @@ class _WeatherPageState extends State<WeatherPage> {
           backgroundColor: Colors.transparent,
           body: CustomScrollView(slivers: [
             SliverAppBar(
-              stretch: _stretch,
-              stretchTriggerOffset: 1,
+              stretch: _stretched,
+              stretchTriggerOffset: 5,
               onStretchTrigger: () async => {setState(() {_stretched = true;})},
               backgroundColor: _stretched ? Colors.transparent : Colors.black, 
               pinned: true,
