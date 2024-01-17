@@ -1,4 +1,6 @@
+import 'package:Wawsim/pages/settings.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:Wawsim/controllers/onboard_controller.dart';
 import 'package:Wawsim/controllers/weather_controller.dart';
@@ -14,6 +16,9 @@ void main() async {
  await Firebase.initializeApp(
 options: DefaultFirebaseOptions.currentPlatform,
 );
+FirebaseFirestore.instance.settings = const Settings(
+    persistenceEnabled: true,
+  );
   runApp(MyApp());
 }
 
@@ -33,7 +38,8 @@ class MyApp extends StatelessWidget {
         GetPage(name: "/", page: () => OnboardingPage(), binding: OnboardBinding()),
         GetPage(name: "/weather", page: () => WeatherPage(), binding: WeatherBinding()),
         GetPage(name: "/login", page: () => LoginPage()),
-        GetPage(name: "/signup", page: () => SignUpPage())
+        GetPage(name: "/signup", page: () => SignUpPage()),
+        GetPage(name: "/settings", page: () => SettingsPage())
       ],
       initialRoute: "/",
     );

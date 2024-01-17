@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:Wawsim/controllers/places_controller.dart';
 import 'package:get/get.dart';
 import 'package:http/http.dart' as http;
 import 'package:firebase_auth/firebase_auth.dart';
@@ -42,10 +43,13 @@ class WeatherController extends GetxController {
     super.onInit();
     updateWeatherInformation();
   }
+  String currentPlace = "";
   Rx<WeatherInformation> currentWeatherInformation = WeatherInformation(location: "...", temperature: "...", condition: "...", feelsLike: "...", windSpeed: "...", humidity: "...", uvIndex: "...", visibility: "...", airPressure: "...", sunRise: "...", sunSet: "...", maxTemperature: "...", minTemperature: "...").obs;
 
   Future<WeatherInformation?> fetchWeatherInformation() async {
-    var a = await http.get(Uri.parse("https://wttr.in/?format=j1"));
+    var a = await http.get(Uri.parse("https://wttr.in/${(currentPlace.split(" ").join("+"))}?format=j1"));
+    print(jsonDecode(a.body)["nearest_area"]);
+    print(jsonDecode(a.body)["current_condition"]);
     if (a.statusCode == 200) {
       var output = jsonDecode(a.body);
       return WeatherInformation(location: output["nearest_area"][0]["areaName"][0]["value"], 
@@ -85,6 +89,7 @@ class WeatherBinding implements Bindings {
   @override
   void dependencies() {
     Get.put(WeatherController());
+    Get.put(PlacesController());
   }
   
 }
