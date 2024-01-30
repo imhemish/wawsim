@@ -10,6 +10,7 @@ import 'package:Wawsim/pages/signup.dart';
 import 'pages/weather.dart';
 import 'package:get/get.dart';
 import 'firebase_options.dart';
+import 'package:adwaita/adwaita.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -30,10 +31,8 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       title: 'Wawsim',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
+      theme: AdwaitaThemeData.light(),
+      darkTheme: AdwaitaThemeData.dark(),
       getPages: [
         GetPage(name: "/", page: () => OnboardingPage(), binding: OnboardBinding()),
         GetPage(name: "/weather", page: () => WeatherPage(), binding: WeatherBinding()),

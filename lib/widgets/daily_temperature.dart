@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:Wawsim/util.dart';
+import '../../util.dart';
 
 class CustomDailyContainer extends StatelessWidget {
   const CustomDailyContainer(

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:Wawsim/util.dart';
+import '../../util.dart';
 
 class CustomContainerTemperature extends StatelessWidget {
   const CustomContainerTemperature(this.time, this.temperature);

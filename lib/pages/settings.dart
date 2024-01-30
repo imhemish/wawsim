@@ -1,4 +1,4 @@
-import 'package:Wawsim/controllers/places_controller.dart';
+import '../controllers/user_data_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -9,7 +9,7 @@ class SettingsPage extends StatefulWidget {
 
 class _SettingsPageState extends State<SettingsPage> {
   final _textController = TextEditingController();
-  var placesController = Get.find<PlacesController>();
+  var userDataController = Get.find<UserDataController>();
   
   @override
   Widget build(BuildContext context) {
@@ -18,23 +18,39 @@ class _SettingsPageState extends State<SettingsPage> {
       body: Obx(
         () => Column(
           children: <Widget>[
+            SizedBox(height: 10,),
+            Text("Places", style: Theme.of(context).textTheme.headlineMedium,),
+            SizedBox(height: 10,),
             
               Row(
+                mainAxisAlignment: MainAxisAlignment.center,
                 
                 children: [
-                  SizedBox(width: 300, child: TextField(controller: _textController)),
+                  
+                  SizedBox(width: 380, child: TextField(controller: _textController, decoration: InputDecoration(labelText: "Add Place"),)),
                   IconButton(onPressed: () {
-                    placesController.addPlace(_textController.text.trim());
+                    userDataController.addPlace(_textController.text.trim());
                   }, 
-                  icon: Icon(Icons.done_rounded)
+                  icon: Icon(Icons.add)
                   )
                 ],
               ),
           ]+
-          placesController.places.map((place) => ListTile(title: Text(place), trailing: 
-          IconButton(
-            icon: Icon(Icons.delete, color: Colors.red,), onPressed: () => placesController.deletePlace(place),)
-            ,)).toList()
+          userDataController.places.map((place) => ConstrainedBox(
+            constraints: BoxConstraints.loose(Size(550, double.infinity)),
+            child: ListTile(title: Text(place), trailing: 
+            IconButton(
+              icon: Icon(Icons.delete, color: Colors.red,), onPressed: () => userDataController.deletePlace(place),)
+              ,),
+          )).toList()+
+          [
+            ConstrainedBox(constraints:BoxConstraints.loose(Size(550, double.infinity)), child: Divider()),
+            SizedBox(height: 10,),
+            ConstrainedBox(
+              constraints: BoxConstraints.loose(Size(550, double.infinity)),
+              child: ListTile(trailing: IconButton(icon: Icon(Icons.add_a_photo_outlined, color: Colors.blue,), onPressed: () => userDataController.uploadImage(),), title: Text("Background Image")),
+            ),
+          ]
           ,
         ),
       ),

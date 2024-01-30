@@ -8,6 +8,10 @@
             "name": "wawsim",
             "request": "launch",
             "type": "dart",
+            "args": [
+                "--web-renderer",
+                "html"
+            ],
             "noDebug": true
         },
         {

@@ -1,6 +1,5 @@
 import 'dart:convert';
-
-import 'package:Wawsim/controllers/places_controller.dart';
+import './user_data_controller.dart';
 import 'package:get/get.dart';
 import 'package:http/http.dart' as http;
 import 'package:firebase_auth/firebase_auth.dart';
@@ -42,7 +41,9 @@ class WeatherController extends GetxController {
   void onInit() {
     super.onInit();
     updateWeatherInformation();
+
   }
+
   String currentPlace = "";
   Rx<WeatherInformation> currentWeatherInformation = WeatherInformation(location: "...", temperature: "...", condition: "...", feelsLike: "...", windSpeed: "...", humidity: "...", uvIndex: "...", visibility: "...", airPressure: "...", sunRise: "...", sunSet: "...", maxTemperature: "...", minTemperature: "...").obs;
 
@@ -89,7 +90,7 @@ class WeatherBinding implements Bindings {
   @override
   void dependencies() {
     Get.put(WeatherController());
-    Get.put(PlacesController());
+    Get.put(UserDataController());
   }
   
 }

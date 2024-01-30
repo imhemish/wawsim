@@ -83,10 +83,11 @@ class _OnboardingPageState extends State<OnboardingPage> with TickerProviderStat
                   ),
                   
                   ElevatedButton(
+                        style: Theme.of(context).elevatedButtonTheme.style,
                         onPressed: () {
                           Get.offNamed("/login");
                         },
-                        child: Text('Get Started'),
+                        child: Text('Get Started', style: Theme.of(context).textTheme.titleMedium,),
                       ),
                   
                 ],
