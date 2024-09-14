@@ -27,20 +27,20 @@ class _SettingsPageState extends State<SettingsPage> {
                 
                 children: [
                   
-                  SizedBox(width: 380, child: TextField(controller: _textController, decoration: InputDecoration(labelText: "Add Place"),)),
+                  SizedBox(width: 340, child: TextField(controller: _textController, decoration: InputDecoration(labelText: "Add Place"),)),
                   IconButton(onPressed: () {
                     userDataController.addPlace(_textController.text.trim());
                   }, 
-                  icon: Icon(Icons.add)
+                  icon: const Icon(Icons.add)
                   )
                 ],
               ),
           ]+
           userDataController.places.map((place) => ConstrainedBox(
-            constraints: BoxConstraints.loose(Size(550, double.infinity)),
+            constraints: BoxConstraints.loose(const Size(550, double.infinity)),
             child: ListTile(title: Text(place), trailing: 
             IconButton(
-              icon: Icon(Icons.delete, color: Colors.red,), onPressed: () => userDataController.deletePlace(place),)
+              icon: const Icon(Icons.delete, color: Colors.red,), onPressed: () => userDataController.deletePlace(place),)
               ,),
           )).toList()+
           [

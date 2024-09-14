@@ -11,6 +11,7 @@ import 'pages/weather.dart';
 import 'package:get/get.dart';
 import 'firebase_options.dart';
 import 'package:adwaita/adwaita.dart';
+import 'package:onesignal_flutter/onesignal_flutter.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -20,6 +21,8 @@ options: DefaultFirebaseOptions.currentPlatform,
 FirebaseFirestore.instance.settings = const Settings(
     persistenceEnabled: true,
   );
+  OneSignal.initialize("8d0d8ba0-30a3-440e-8062-eb8f03d80470");
+  OneSignal.Notifications.requestPermission(true);
   runApp(MyApp());
 }
 

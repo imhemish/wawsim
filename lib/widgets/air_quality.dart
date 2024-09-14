@@ -37,8 +37,8 @@ class AirQuality extends StatelessWidget {
               Container(
                 height: height / 50,
                 width: width / 1.2,
-                decoration: BoxDecoration(
-                    gradient: LinearGradient(colors: const [
+                decoration: const BoxDecoration(
+                    gradient: LinearGradient(colors: [
                   Color(0xff1f005c),
                   Color(0xff5b0060),
                   Color(0xff870160),

@@ -39,8 +39,7 @@ class _WeatherPageState extends State<WeatherPage> {
       () => Container(
         decoration: BoxDecoration(
           image:  DecorationImage(
-            image: imageStuff(userDataController.backgroundImageType.value,userDataController.imageURL.value)
-             ,
+            image: imageStuff(userDataController.backgroundImageType.value,userDataController.imageURL.value),
             fit: BoxFit.cover,
           ),
         ),
